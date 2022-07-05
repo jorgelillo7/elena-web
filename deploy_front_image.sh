@@ -1,14 +1,14 @@
 echo "Building image"
 
-export CLOUDSDK_PYTHON=/usr/bin/python
+export CLOUDSDK_PYTHON=/Users/jorge/.pyenv/shims/python
 
 # Edit these values
-gcp_account="my_email_for_gcp@gmail.com"
-gcp_project_name="my-project-name"
-image_name="my-image-name"
-cloud_run_name="my-image-name"
+gcp_account="jorge.lillo9@gmail.com"
+gcp_project_name="elena-web"
+image_name="elena-web-front"
+cloud_run_name="elena-web-front"
 
-docker build -t us.gcr.io/${gcp_project_name}/$image_name .
+docker build -t us.gcr.io/${gcp_project_name}/$image_name . --platform linux/amd64
 
 previous_account=$(gcloud config get-value account)
 previous_project=$(gcloud config get-value project)
